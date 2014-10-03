@@ -1,7 +1,7 @@
 Vulture
 =======
 
-Zack Nagaich\n
+Zack Nagaich
 The Ohio State University
 5th Year
 CIS
