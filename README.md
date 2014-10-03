@@ -1,5 +1,4 @@
 #Vulture
-=======
 We are developing a game using Unreal 4 technology with the Oculus Rift!
 
 
