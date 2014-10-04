@@ -66,6 +66,9 @@ protected:
 	 */
 	void LookUpAtRate(float Rate);
 
+	void JetPack(float value);
+;
+
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;

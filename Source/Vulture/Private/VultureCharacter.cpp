@@ -62,6 +62,10 @@ void AVultureCharacter::SetupPlayerInputComponent(class UInputComponent* InputCo
 	InputComponent->BindAxis("TurnRate", this, &AVultureCharacter::TurnAtRate);
 	InputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
 	InputComponent->BindAxis("LookUpRate", this, &AVultureCharacter::LookUpAtRate);
+
+	//JetPack Bind Axis
+	InputComponent->BindAxis("JetPack", this, &AVultureCharacter::JetPack);
+
 }
 
 void AVultureCharacter::OnFire()
@@ -137,4 +141,20 @@ void AVultureCharacter::LookUpAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
+}
+
+
+UFUNCTION()
+void AVultureCharacter::JetPack(float rate){
+
+	if (CharacterMovement && rate > 0.01)
+	{
+		FVector FinalVel = *(new FVector(GetVelocity().X, GetVelocity().Y, rate * 500));
+		const FVector Velocity = GetVelocity();
+
+		CharacterMovement->Launch(FinalVel);
+
+		OnLaunched(FinalVel, true, true);
+	}
+
 }
