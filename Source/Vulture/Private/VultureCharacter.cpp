@@ -8,7 +8,9 @@
 
 //////////////////////////////////////////////////////////////////////////
 // AVultureCharacter
-static int fuelLevel = 5000;
+static const int TOPFUELLEVEL = 900;
+static int fuelLevel = TOPFUELLEVEL;
+
 AVultureCharacter::AVultureCharacter(const class FPostConstructInitializeProperties& PCIP)
 	: Super(PCIP)
 {
@@ -152,7 +154,7 @@ void AVultureCharacter::JetPack(float rate){
 		if (fuelLevel > 0)
 		{
 			fuelLevel -= 10;
-			FVector FinalVel = *(new FVector(GetVelocity().X, GetVelocity().Y, rate * 100));
+			FVector FinalVel = *(new FVector(GetVelocity().X, GetVelocity().Y, rate * 400));
 			const FVector Velocity = GetVelocity();
 
 			CharacterMovement->Launch(FinalVel);
@@ -162,7 +164,7 @@ void AVultureCharacter::JetPack(float rate){
 	}
 	else {
 		int worldSeconds = (int)(GetWorld()->GetDeltaSeconds());
-		if ((worldSeconds % 2) == 0 && fuelLevel != 5000){
+		if ((worldSeconds % 2) == 0 && fuelLevel != TOPFUELLEVEL){
 			fuelLevel += 5;
 		}
 	}
