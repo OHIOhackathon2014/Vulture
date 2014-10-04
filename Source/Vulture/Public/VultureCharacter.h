@@ -66,8 +66,8 @@ protected:
 	 */
 	void LookUpAtRate(float Rate);
 
+	//jetpack functionality
 	void JetPack(float value);
-;
 
 protected:
 	// APawn interface

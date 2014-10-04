@@ -5,7 +5,6 @@
 #include "VultureProjectile.h"
 #include "Animation/AnimInstance.h"
 
-
 //////////////////////////////////////////////////////////////////////////
 // AVultureCharacter
 static const int TOPFUELLEVEL = 900;
