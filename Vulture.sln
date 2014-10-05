@@ -1,15 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-<<<<<<< HEAD
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vulture", "Intermediate\ProjectFiles\Vulture.vcxproj", "{F1B444CC-8057-4E55-A7A5-7C1FD98E1FEB}"
-=======
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Vulture", "Intermediate\ProjectFiles\Vulture.vcxproj", "{922ADEF0-400E-457E-A07A-C241A6D0E67C}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
->>>>>>> origin/particletest
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,7 +27,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal
