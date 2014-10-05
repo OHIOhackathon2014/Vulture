@@ -29,12 +29,11 @@ AVultureCharacter::AVultureCharacter(const class FPostConstructInitializePropert
 	GunOffset = FVector(100.0f, 30.0f, 10.0f);
 
 	// Create a mesh component that will be used when being viewed from a '1st person' view (when controlling this pawn)
-	Mesh1P = PCIP.CreateDefaultSubobject<USkeletalMeshComponent>(this, TEXT("CharacterMesh1P"));
-	Mesh1P->SetOnlyOwnerSee(true);			// only the owning player will see this mesh
-	Mesh1P->AttachParent = FirstPersonCameraComponent;
-	Mesh1P->RelativeLocation = FVector(0.f, 0.f, -150.f);
-	Mesh1P->bCastDynamicShadow = false;
-	Mesh1P->CastShadow = false;
+	//Mesh1P->SetOnlyOwnerSee(true);			// only the owning player will see this mesh
+	//Mesh1P->AttachParent = FirstPersonCameraComponent;
+	//Mesh1P->RelativeLocation = FVector(0.f, 0.f, -150.f);
+	//Mesh1P->bCastDynamicShadow = false;
+	//Mesh1P->CastShadow = false;
 
 	// Note: The ProjectileClass and the skeletal mesh/anim blueprints for Mesh1P are set in the
 	// derived blueprint asset named MyCharacter (to avoid direct content references in C++)
@@ -92,16 +91,6 @@ void AVultureCharacter::OnFire()
 		UGameplayStatics::PlaySoundAtLocation(this, FireSound, GetActorLocation());
 	}
 
-	// try and play a firing animation if specified
-	if(FireAnimation != NULL)
-	{
-		// Get the animation object for the arms mesh
-		UAnimInstance* AnimInstance = Mesh1P->GetAnimInstance();
-		if(AnimInstance != NULL)
-		{
-			AnimInstance->Montage_Play(FireAnimation, 1.f);
-		}
-	}
 
 }
 
