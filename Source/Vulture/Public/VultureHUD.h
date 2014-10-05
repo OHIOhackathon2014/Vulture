@@ -7,7 +7,9 @@ UCLASS()
 class AVultureHUD : public AHUD
 {
 	GENERATED_UCLASS_BODY()
-
+	/** Put Roboto Here */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = JoyHUD)
+	UFont* UE4Font;
 public:
 
 	/** Primary draw call for the HUD */

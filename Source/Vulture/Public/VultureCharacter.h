@@ -3,6 +3,8 @@
 #include "GameFramework/Character.h"
 #include "VultureCharacter.generated.h"
 
+static int fuelLevel = 900;
+
 UCLASS(config=Game)
 class AVultureCharacter : public ACharacter
 {

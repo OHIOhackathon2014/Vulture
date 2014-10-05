@@ -9,7 +9,6 @@
 //////////////////////////////////////////////////////////////////////////
 // AVultureCharacter
 static const int TOPFUELLEVEL = 900;
-static int fuelLevel = TOPFUELLEVEL;
 
 AVultureCharacter::AVultureCharacter(const class FPostConstructInitializeProperties& PCIP)
 	: Super(PCIP)
@@ -164,7 +163,7 @@ void AVultureCharacter::JetPack(float rate){
 	}
 	else {
 		int worldSeconds = (int)(GetWorld()->GetDeltaSeconds());
-		if ((worldSeconds % 2) == 0 && fuelLevel != TOPFUELLEVEL){
+		if ((worldSeconds % 2) == 0 && fuelLevel != TOPFUELLEVEL && GetVelocity().Z == 0){
 			fuelLevel += 5;
 		}
 	}
